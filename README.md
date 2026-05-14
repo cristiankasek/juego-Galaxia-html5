@@ -1,1 +1,1 @@
-# juego-Galaxia-html5-javascrip
+# juego-Galaxia-html5
