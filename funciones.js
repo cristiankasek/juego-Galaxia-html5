@@ -200,6 +200,7 @@ function colisiones() {
 				}
 			}
 		}
+		localStorage.setItem("enemigo", enemigosVivos);
 	}
 	for (var j = 0; j < balasEnemigas_array.length; j++) {
 		bala = balasEnemigas_array[j];
@@ -239,14 +240,16 @@ function gameOver() {
 	endGame = true;
 	clearTimeout(disparoEnemigo);
 }
-function score() {
-	ctx.save();
+function score() {	
+	ctx.save();	
 	ctx.fillStyle = "white";
 	ctx.clearRect(0, 0, canvas.width, 20);
 	ctx.font = "bold 12px Courier";
-	ctx.fillText("SCORE: " + puntos, 10, 20);
-	ctx.restore();
+	ctx.fillText("SCORE: " + puntos, 10, 20);	
+    ctx.restore();
+	localStorage.setItem("puntosActuales", puntos);
 }
+
 function municiones() {
 	ctx.save();
 	ctx.fillStyle = "white";
@@ -254,6 +257,7 @@ function municiones() {
 	ctx.font = "bold 12px Courier";
 	ctx.fillText("Municion: " + (sinMunicion ? 'Sin municion.' : municion), 10, 40);
 	ctx.restore();
+	localStorage.setItem("municiones", municion);
 }
 function verifica(boton=false, codigo=0) {
 	if(boton){
