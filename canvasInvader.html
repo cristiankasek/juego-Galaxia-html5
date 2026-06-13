@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="estilos.css">
 		<title>Galaxia</title>
 		<script type="text/javascript" src="funciones.js"></script>
-		<link rel="manifest" href="manifest.json">
+		
 	</head>
 	<body>
 		<fieldset>
@@ -13,7 +13,7 @@
 			<form>
 				<label for="nombre">Nombre del jugador:</label>
 				<input type="text" id="nombre"  placeholder="Escribe tu nombre">
-				<button id="btn-guardar">Guardar Nombre</button>
+				<button onclick="guardarNombre()" id="btn-guardar">Guardar Nombre</button>
 					
 			</form> 
 		</fieldset> <br>
@@ -28,8 +28,10 @@
 			<button class="botonReiniciar" onclick="reiniciar()">Jugar</button>
 		</div>
 		<canvas id="ranking" width="600px" height="200px">
-			<div id="pantalla-tiempo-real">
-    			Esperando datos del servidor...
+			<div id="pantalla-tiempo-real">				
+				<h2>Ranking en tiempo real</h2>
+				<ul id="ranking-list"></ul>
+					
 			</div>
 		</canvas>
 	</body>		

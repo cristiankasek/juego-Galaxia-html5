@@ -77,16 +77,12 @@ var puntos = 0;
 var sinMunicion = false;
 
 //guarfar nombre 
-const inputNombre = document.getElementById('nombre');
-const botonGuardar = document.getElementById('btn-guardar');	
-botonGuardar.addEventListener('click', function(event) {
-	const nombreJugador = inputNombre.value.trim();
-	if (nombreJugador !== '') {
-		localStorage.setItem('nombreJugador', nombreJugador);
-	}
-	inputNombre.value = '';
-});	
-
+function guardarNombre() {
+	var nombrejugador = document.getElementById("nombre").value;
+	console.log(nombrejugador);
+	localStorage.setItem("nombreJugador", nombrejugador);
+	
+}
 
 /*****************
 OBJETOS
@@ -320,7 +316,8 @@ function checarBalas(){
 		setTimeout(() => { gameOver(); }, 1000);
 	}
 }
-function pinta() {
+
+function pinta() {	
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	score();
 	municiones();
@@ -387,8 +384,8 @@ socket.addEventListener('open', function (event) {
 
 socket.send(JSON.stringify({ 
 	"game": "Galaxia",
-	"nombre": nombreJugador,
-	"puntos": puntos,	
+	"nombre": localStorage.getItem("nombreJugador") ,
+	"puntos": localStorage.getItem("puntosActuales"),	
  }));
 
 
@@ -396,19 +393,9 @@ socket.onmessage = function (event) {
 	const datos_recibidos = JSON.parse(event.data);
 	console.log('Mensaje recibido del servidor:', datos_recibidos);
 	
-	
 };
+const rankingList = document.getElementById('ranking-list');
+socket.addEventListener('message', function (event) {
+	const datos_recibidos = JSON.parse(event.data);	
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
+});
