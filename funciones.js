@@ -7,7 +7,8 @@ window.onload = function () {
 		ctx = canvas.getContext("2d");
 		if (ctx) {
 			x = canvas.width / 2;
-			mensaje("INVASORES");
+			mensaje("GALAXIA");
+			
 			imgNave = new Image();
 			imgOvni = new Image();
 			imgOvni.src = "imagenes/ovni.png";
@@ -362,3 +363,30 @@ function disparaEnemigo() {
 function reiniciar(){
 	location.reload();
 }
+/*websocket*/
+const	socket = new WebSocket('wss://gamehubmanager.azurewebsites.net/ws');
+socket.addEventListener('open', function (event) {
+	console.log('Conexión WebSocket establecida');
+});
+
+socket.send(JSON.stringify({ 
+	"game": "Galaxia",
+	"nombre": "Jugador1",
+	"puntos": puntos,
+	
+ }));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
