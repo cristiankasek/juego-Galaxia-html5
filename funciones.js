@@ -23,7 +23,7 @@ window.onload = function () {
 						ovnis_array.push(new Enemigo(100 + 40 * j, 30 + 45 * i));
 					}
 				}
-				setTimeout(anima, 1500);
+				setTimeout(anima, 4000);
 				disparoEnemigo = setTimeout(disparaEnemigo, tiempoDisparo);
 			}
 		} else {
