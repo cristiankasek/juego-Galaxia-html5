@@ -1,13 +1,14 @@
 /**************
 INICIO
 ***************/
-window.onload = function () {
+
+window.onload = function () {	
 	canvas = document.getElementById("miCanvas");
 	if (canvas && canvas.getContext) {
-		ctx = canvas.getContext("2d");
-		if (ctx) {
+		ctx = canvas.getContext("2d");		
+		if (ctx ) {
 			x = canvas.width / 2;
-			mensaje("GALAXIA");
+			mensaje("GALAXIA");			
 			
 			imgNave = new Image();
 			imgOvni = new Image();
@@ -29,6 +30,8 @@ window.onload = function () {
 			alert("Error al crear tu contexto");
 		}
 	}
+	
+
 }
 /*************
 LISTENER
@@ -49,7 +52,7 @@ document.addEventListener("keyup", function (e) {
 /*******************
 VARIABLES
 ********************/
-var canvas, ctx;
+var canvas, ctx, canvas2, ctz;
 var x = 100;
 var y = 100;
 var teclaIzquierda = 37;
@@ -72,6 +75,19 @@ var disparoEnemigo;
 var tiempoDisparo = 500;
 var puntos = 0;
 var sinMunicion = false;
+
+//guarfar nombre 
+const inputNombre = document.getElementById('nombre');
+const botonGuardar = document.getElementById('btn-guardar');	
+botonGuardar.addEventListener('click', function(event) {
+	const nombreJugador = inputNombre.value.trim();
+	if (nombreJugador !== '') {
+		localStorage.setItem('nombreJugador', nombreJugador);
+	}
+	inputNombre.value = '';
+});	
+
+
 /*****************
 OBJETOS
 ******************/
@@ -371,11 +387,17 @@ socket.addEventListener('open', function (event) {
 
 socket.send(JSON.stringify({ 
 	"game": "Galaxia",
-	"nombre": "Jugador1",
-	"puntos": puntos,
-	
+	"nombre": nombreJugador,
+	"puntos": puntos,	
  }));
 
+
+socket.onmessage = function (event) {
+	const datos_recibidos = JSON.parse(event.data);
+	console.log('Mensaje recibido del servidor:', datos_recibidos);
+	
+	
+};
 
 
 

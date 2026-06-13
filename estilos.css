@@ -10,6 +10,11 @@ h1 {
     background: black;
     box-shadow: 10px 10px 10px #888888;
 }
+#ranking{
+    border: groove 2px rgb(76, 0, 255);
+    background: rgb(238, 230, 230);
+    box-shadow: 5px 5px 5px #888888;
+}
 .botonesMover{
     color: #e8e8e8;
     background-color: #006df1;
