@@ -1,0 +1,23 @@
+{
+  "background_color": "#8da0fa",
+  "dir": "auto",
+  "display": "standalone",
+  "name": "cristiankasek.github",
+  "orientation": "any",
+  "scope": "/https://cristiankasek.github.io/juego-Galaxia-html5/",
+  "short_name": "cristiankasek.github",
+  "start_url": "/https://cristiankasek.github.io/juego-Galaxia-html5/",
+  "theme_color": "#ffffff",
+  "id": "Galaxia",
+  "description": "Juego de naves",
+  "shortcuts": [
+    {
+      "name": "",
+      "url": "",
+      "description": ""
+    }
+  ],
+  "categories": [
+    "games"
+  ]
+}
