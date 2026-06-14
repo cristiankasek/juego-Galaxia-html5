@@ -19,7 +19,7 @@
   ],
   "icons": [
   {
-      "src": "https://cristiankasek.github.io/juego-Galaxia-html5/blob/main/imagenes/android512x512.png",
+      "src": "imagenes/android512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
