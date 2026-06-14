@@ -18,16 +18,28 @@
     }
   ],
   "icons": [
-  {
+    {
       "src": "imagenes/android512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
-  }  
-],
-
-  
+    }
+  ],
   "categories": [
     "games"
-  ]
+  ],
+  "iarc_rating_id": "https://cristiankasek.github.io/juego-Galaxia-html5/",
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://cristiankasek.github.io/juego-Galaxia-html5/",
+      "id": ""
+    },
+    {
+      "platform": "chrome_web_store",
+      "url": "https://cristiankasek.github.io/juego-Galaxia-html5/",
+      "id": ""
+    }
+  ],
+  "prefer_related_applications": true
 }
